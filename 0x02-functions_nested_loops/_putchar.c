@@ -1,5 +1,5 @@
-#include<unistd.h>
-#include<main.h>
+#include <unistd.h>
+#include "main.h"
 
 /*
  * creat the function _putchar
