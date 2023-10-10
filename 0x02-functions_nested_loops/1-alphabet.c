@@ -2,6 +2,7 @@
 
 /**
  * main - Entry point
+ * print_alphabet: function to write alphabet
  *
  * Return: Always 0 (Success)
  */
