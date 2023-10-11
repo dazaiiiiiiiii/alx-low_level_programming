@@ -15,28 +15,28 @@ void print_times_table(int n)
 		i = 0;
 		while (i <= n)
 		{
-			putchar(48);
+			_putchar(48);
 			j = 0;
 			while (j <= n)
 			{
-				putchar(',');
-				putchar(' ');
+				_putchar(',');
+				_putchar(' ');
 				prod = i * j;
 				if (prod <= 9)
-					putchar(' ');
+					_putchar(' ');
 				if (prod <= 99)
-					putchar(' ');
+					_putchar(' ');
 				if (prod >= 100)
 				{
-					putchar((prod / 100) + 48);
-					putchar((prod / 10) % 10 + 48);
+					_putchar((prod / 100) + 48);
+					_putchar((prod / 10) % 10 + 48);
 				}
 				else if (prod <= 99 && prod >= 10)
-					putchar((prod / 10) + 48);
-				putchar ((prod % 10) + 48);
+					_putchar((prod / 10) + 48);
+				_putchar ((prod % 10) + 48);
 				j++;
 			}
-			putchar('\n');
+			_putchar('\n');
 			i++;
 		}
 	}
