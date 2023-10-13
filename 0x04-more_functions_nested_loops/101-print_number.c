@@ -13,9 +13,9 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		nb = -nb;
+		nb = -n;
 	}
-	if (nb >= 0 && nb <= 9)
+	if (n >= 0 && n <= 9)
 		_putchar(nb + '0');
 	else
 	{
