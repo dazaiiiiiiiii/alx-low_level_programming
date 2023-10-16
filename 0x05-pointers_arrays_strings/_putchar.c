@@ -2,15 +2,12 @@
 #include <unistd.h>
 
 /**
- * main - Entry point
+ * _putchar - to write chars
  *
- * @c: take input
- *
- * Return: Always 0 (Success)
+ * @c: takes input
  */
 
-int main(char c)
+void _putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }
