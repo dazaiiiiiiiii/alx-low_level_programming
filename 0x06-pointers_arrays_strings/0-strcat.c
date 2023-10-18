@@ -12,7 +12,6 @@
 char *_strcat(char *dest, char *src)
 {
 	char *dest2 = dest;
-	int i = 0;
 	int j;
 
 	while (*dest2)
