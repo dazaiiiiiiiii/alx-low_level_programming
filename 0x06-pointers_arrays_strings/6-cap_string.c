@@ -2,7 +2,6 @@
 
 /**
  * lowercase - function that changes all uppercase lett to low
- * cap_string - function that capitalizes all words of a string
  *
  * @str: takes string
  * Return: string str
@@ -20,6 +19,13 @@ char *lowercase(char *str)
 	}
 	return (str);
 }
+
+/**
+ * cap_string - function that capitalizes all words of a string
+ *
+ * @str: takes string
+ * Return: string str
+ */
 
 char *cap_string(char *str)
 {
