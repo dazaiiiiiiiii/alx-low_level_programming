@@ -13,7 +13,7 @@ char *leet(char *str)
 	int j = 0;
 	char lett[] = {'a', 'e', 'o', 't', 'l'};
 	char num[] = {'4', '3', '0', '7', '1'};
-	int i;
+	unsigned int i;
 
 	while (str[j])
 	{
