@@ -1,75 +1,33 @@
 #include "main.h"
 
 /**
- * lowercase - function that changes all uppercase lett to low
- *
- * @str: takes string
- * Return: string str
- */
+ * cap_string - Captilizes the string given as parameter
+ * @s: the string
+ * Return: the captilized string
+ **/
 
-char *lowercase(char *str)
+char *cap_string(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (str[i])
+	i = 0;
+	if (s[i] >= 'a' && s[i] <= 'z')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
-		i++;
+		s[i] -= 32;
 	}
-	return (str);
-}
 
-/**
- * separators - function that check the separators
- *
- * @c: takes char intput
- *
- * Return: 1 while true 0 while false
- */
-
-char separators(char c)
-{
-	int i = 0;
-	char sep[] = " \t\n,;.!?\"(){}";
-
-	while (i < 12)
+	while (s[i])
 	{
-		if (c == sep[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-/**
- * cap_string - function that capitalizes all words of a string
- *
- * @str: takes string
- * Return: string str
- */
-
-char *cap_string(char *str)
-{
-	int i = 0;
-	int check = 1;
-
-	lowercase(str);
-	while (str[i])
-	{
-		if (str[i] == '\t')
-			str[i] = ' ';
-		if (separators(str[i]))
-			check = 1;
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ','
+			|| s[i] == ';' || s[i] == '.' || s[i] == '!' || s[i] == '?'
+			|| s[i] == '\"' || s[i] == '(' || s[i] == ')' || s[i] == '{'
+			|| s[i] == '}')
 		{
-			if (check == 1)
-				str[i] -= 32;
-			check = 0;
+			if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				s[i + 1] -= 'a' - 'A';
 		}
-		else if (str[i] >= '0' && str[i] <= '9')
-			check = 0;
+
 		i++;
 	}
-	return (str);
+	return (s);
 }
