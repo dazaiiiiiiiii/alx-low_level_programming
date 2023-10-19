@@ -57,6 +57,8 @@ char *cap_string(char *str)
 	lowercase(str);
 	while (str[i])
 	{
+		if (str[i] == '\t')
+			str[i] = ' ';
 		if (separators(str[i]))
 			check = 1;
 		if (str[i] >= 'a' && str[i] <= 'z')
