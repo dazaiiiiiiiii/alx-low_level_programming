@@ -31,7 +31,7 @@ char *lowercase(char *str)
 char separators(char c)
 {
 	int i = 0;
-	char sep[] = ",;.!?\"(){}";
+	char sep[] = " \t\n,;.!?\"(){}";
 
 	while (i < 12)
 	{
