@@ -21,6 +21,28 @@ char *lowercase(char *str)
 }
 
 /**
+ * separators - function that check the separators
+ *
+ * @c: takes char intput
+ *
+ * Return: 1 while true 0 while false
+ */
+
+char separators(char c)
+{
+	int i = 0;
+	char sep[] = ",;.!?\"(){}";
+
+	while (i < 12)
+	{
+		if (c == sep[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+/**
  * cap_string - function that capitalizes all words of a string
  *
  * @str: takes string
@@ -35,6 +57,8 @@ char *cap_string(char *str)
 	lowercase(str);
 	while (str[i])
 	{
+		if (separators(str[i]))
+			check = 1;
 		if (str[i] >= 'a' && str[i] <= 'z')
 		{
 			if (check == 1)
@@ -43,10 +67,6 @@ char *cap_string(char *str)
 		}
 		else if (str[i] >= '0' && str[i] <= '9')
 			check = 0;
-		else if (str[i] == '-')
-			check = 0;
-		else
-			check = 1;
 		i++;
 	}
 	return (str);
