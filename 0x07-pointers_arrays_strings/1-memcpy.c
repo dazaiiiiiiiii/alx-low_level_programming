@@ -6,7 +6,6 @@
  * @dest: array to past
  * @src: array where we copied
  * @n: size
- * 
  * Return: return value of dest
  */
 
