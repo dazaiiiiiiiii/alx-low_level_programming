@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * lengh - function that return the lengh of string
+ * length - function that return the lengh of string
  *
  * @str: input string
  * Return: the lengh
  */
 
-int lengh(char *str)
+int length(char *str)
 {
 	int i = 0;
 
@@ -26,24 +26,31 @@ int lengh(char *str)
 
 char *_strstr(char *haystack, char *needle)
 {
-	int nedlengh = lengh(needle);
-	int count;
+	int nedlengh = length(needle);
+	int count = 0;
 
-	while (*haystack && *needle)
+	if (nedlengh == 0)
+		return (haystack);
+	while (*haystack)
 	{
-		count = 0;
-		while (*needle == *haystack && *needle)
+		if (*needle == *haystack)
 		{
-			count++;
-			haystack++;
-			needle++;
+			count = 0;
+			while (*needle == *haystack && *needle)
+			{
+				count++;
+				haystack++;
+				needle++;
+			}
+			if (count == nedlengh)
+				return (haystack - count);
+			needle -= count;
 		}
-		if (count == nedlengh)
-			break;
-		haystack++;
-		needle -= count;
+		else
+		{
+			haystack++;
+		}
 	}
-	if (count == nedlengh)
-		return (haystack - count);
 	return (0);
 }
+
