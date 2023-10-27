@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * check_str_number - checks if string contains numbers
@@ -46,7 +47,7 @@ int main(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		sum += _atoi(argv[i]);
+		sum += atoi(argv[i]);
 		i++;
 	}
 
