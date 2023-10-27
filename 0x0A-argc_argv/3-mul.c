@@ -23,4 +23,5 @@ int main(int ac, char **av)
 		printf("Error\n");
 		return (1);
 	}
+	return (0);
 }
