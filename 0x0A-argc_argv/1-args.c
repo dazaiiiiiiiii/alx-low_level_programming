@@ -12,7 +12,7 @@ int main(int ac, char **av)
 {
 	int i = 0;
 
-	while (i < ac - 1)
+	while (i < ac - 1 && av)
 		i++;
 	printf("%d\n", i);
 	return (0);
