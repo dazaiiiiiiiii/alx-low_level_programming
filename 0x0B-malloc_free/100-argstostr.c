@@ -1,5 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
+
+/**
+ * _strlen - function that return the length of str
+ *
+ * @str: takes input
+ * Return: return length
+ */
+
 int _strlen(char *str)
 {
 	int i = 0;
@@ -8,6 +16,15 @@ int _strlen(char *str)
 		i++;
 	return (i);
 }
+
+/**
+ * argstostr - function that concatenates
+ * all the arguments of your program.
+ *
+ * @ac: count argument
+ * @av: argument value
+ * Return: a *p to a new string
+ */
 
 char *argstostr(int ac, char **av)
 {
@@ -23,10 +40,11 @@ char *argstostr(int ac, char **av)
 		size += _strlen(av[i]);
 		i++;
 	}
-	arr = malloc(size * sizeof(char) + 1);
+	arr = malloc(size * sizeof(char) + (ac + 1));
 	if (!arr)
 		return (0);
 	i = 0;
+	index = 0;
 	while (i < ac)
 	{
 		j = 0;
