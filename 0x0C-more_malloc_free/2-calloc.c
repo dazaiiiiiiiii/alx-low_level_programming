@@ -15,7 +15,7 @@ char *_memset(char *arr, unsigned int i, unsigned int n)
 {
 	unsigned int j = 0;
 
-	while (arr[j] < n)
+	while (j < n)
 	{
 		arr[j] = i;
 		j++;
@@ -33,12 +33,11 @@ char *_memset(char *arr, unsigned int i, unsigned int n)
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *arr;
-	unsigned int i;
+	void *arr;
 
 	if (nmemb == 0 || size == 0)
 		return (0);
-	arr = malloc(nmemb * size));
+	arr = malloc(nmemb * size);
 	if (!arr)
 		return (0);
 	_memset(arr, 0, nmemb * size);
