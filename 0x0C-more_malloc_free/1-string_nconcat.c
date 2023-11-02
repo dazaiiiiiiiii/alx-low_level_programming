@@ -30,9 +30,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *arr;
 	unsigned int i = 0;
-	int k;
+	unsigned int k;
 	unsigned int size;
-	int index;
+	unsigned int index;
 	unsigned int length;
 
 	if (*s1)
