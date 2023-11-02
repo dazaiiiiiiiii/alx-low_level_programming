@@ -2,6 +2,28 @@
 #include <stdlib.h>
 
 /**
+ * _memset - function that set the memmory allocated to
+ * specified value.
+ *
+ * @arr: takes allocated arr
+ * @i: specifed value
+ * @n: size of arr
+ * Return: arr
+ */
+
+char *_memset(char *arr, unsigned int i, unsigned int n)
+{
+	unsigned int j = 0;
+
+	while (arr[j] < n)
+	{
+		arr[j] = i;
+		j++;
+	}
+	return (arr);
+}
+
+/**
  * _calloc - function that allocates memory for an array
  *
  * @nmemb: n elements
@@ -16,14 +38,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (nmemb == 0 || size == 0)
 		return (0);
-	arr = malloc(nmemb * sizeof(unsigned int));
+	arr = malloc(nmemb * size));
 	if (!arr)
 		return (0);
-	i = 0;
-	while (i < nmemb)
-	{
-		arr[i] = 0;
-		i++;
-	}
+	_memset(arr, 0, nmemb * size);
 	return (arr);
 }
