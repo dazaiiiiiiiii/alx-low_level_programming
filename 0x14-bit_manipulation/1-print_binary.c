@@ -9,21 +9,22 @@
 
 void print_binary(unsigned long int n)
 {
-	int array[32];
-	int i;
+	int i, count;
+	unsigned long int current;
 
-	i = 0;
-	if (n == 0)
-		_putchar('0');
-	while (n > 0)
+	count = 0;
+	for (i = 63; i >= 0; i--)
 	{
-		array[i] = n & 1;
-		n >>= 1;
-		i++;
+		current = n >> i;
+
+		if (current & 1)
+		{
+			putchar('1');
+			count++;
+		}
+		else if (count)
+			putchar('0');
 	}
-	while (i - 1 >= 0)
-	{
-		_putchar(array[i - 1] + '0');
-		i--;
-	}
+	if (!count)
+		putchar('0');
 }
